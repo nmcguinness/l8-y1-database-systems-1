@@ -6,6 +6,9 @@ Your content here.
 # Slide 2
 More content here.
 
+note:
+These are the speaker notes for this slide. They will only be visible in the presenter view.
+
 ---
 
 # Slide 3
@@ -17,6 +20,9 @@ public class HelloWorld {
     }
 }
 ```
+
+note:
+Other are the speaker notes for this slide. They will only be visible in the presenter view.
 
 ---
 
