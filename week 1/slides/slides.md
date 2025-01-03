@@ -9,7 +9,14 @@ More content here.
 ---
 
 # Slide 3
-Even more content here.
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
 
 ---
 
