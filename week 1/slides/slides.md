@@ -26,7 +26,7 @@ Other are the speaker notes for this slide. They will only be visible in the pre
 
 ---
 
-# Slide 4
+### Slide 4
 
 ```mermaid
 sequenceDiagram
@@ -36,7 +36,7 @@ sequenceDiagram
 
 ---
 
-# SQL Code Example
+## SQL Code Example
 
 ```sql
 -- Create a new table
