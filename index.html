@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reveal.js Presentation</title>
   <link rel="stylesheet" href="./revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="./revealjs/dist/theme/black.css">
+  <link rel="stylesheet" href="./revealjs/dist/theme/league.css">
 </head>
 <body>
   <div class="reveal">
@@ -16,9 +16,69 @@
 
   <script src="./revealjs/dist/reveal.js"></script>
   <script src="./revealjs/plugin/markdown/markdown.js"></script>
+  <script src="./revealjs/plugin/notes/notes.js"></script>
+  <script src="./revealjs/plugin/highlight/highlight.js"></script>
+  <script src="./revealjs/plugin/zoom/zoom.js"></script>
+  <script src="./revealjs/plugin/search/search.js"></script>
+  <script src="./revealjs/plugin/math/math.js"></script>
   <script>
     Reveal.initialize({
-      plugins: [ RevealMarkdown ]
+      // Display presentation control arrows
+      controls: true,
+
+      // Help the user learn the controls by providing hints, for example by
+      // bouncing the down arrow when they first encounter a vertical slide
+      controlsTutorial: true,
+
+      // Determines where controls appear, "edges" or "bottom-right"
+      controlsLayout: 'bottom-right',
+
+      // Visibility rule for backwards navigation arrows; "faded", "hidden"
+      // or "visible"
+      controlsBackArrows: 'faded',
+
+      // Display a presentation progress bar
+      progress: true,
+
+      // Display the page number of the current slide
+      slideNumber: false,
+
+      // Can be used to limit the contexts in which the slide number appears
+      showSlideNumber: 'all',
+
+      // Use 1 based indexing for # links to match slide number (default is zero
+      // based)
+      hashOneBasedIndex: false,
+
+      // Add the current slide number to the URL hash so that reloading the
+      // page/copying the URL will return you to the same slide
+      hash: false,
+
+      // Flags if we should monitor the hash and change slides accordingly
+      respondToHashChanges: true,
+
+      // Enable support for jump-to-slide navigation shortcuts
+      jumpToSlide: true,
+
+      // Push each slide change to the browser history.  Implies `hash: true`
+      history: false,
+
+      // Enable keyboard shortcuts for navigation
+      keyboard: true,
+
+      // Enable the slide overview mode
+      overview: true,
+
+      // Vertical centering of slides
+      center: true,
+
+      // Enables touch navigation on devices with touch input
+      touch: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom ],
+      highlight: {
+        // Optional: configure highlight.js
+        lineNumbers: true
+      }
     });
   </script>
 </body>
