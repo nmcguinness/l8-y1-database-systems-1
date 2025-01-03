@@ -23,6 +23,7 @@
   <script src="./revealjs/plugin/search/search.js"></script>
   <script src="./revealjs/plugin/math/math.js"></script>
   <script src="./revealjs/plugin/mermaid/mermaid.js"></script>
+  <script src="./revealjs/dist/highlightjs-line-numbers.js"></script> 
   <script>
     Reveal.initialize({
       // Display presentation control arrows
@@ -84,7 +85,8 @@
       pdfMaxPagesPerSlide: 1,   // Maximum number of pages per slide in PDF
 
       mermaid: {
-        startOnLoad: true
+        startOnLoad: true,
+        theme: 'dark'
       },
       highlight: {
         // Optional: configure highlight.js
