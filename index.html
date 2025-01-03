@@ -43,7 +43,7 @@
       progress: true,
 
       // Display the page number of the current slide
-      slideNumber: false,
+      slideNumber: true,
 
       // Can be used to limit the contexts in which the slide number appears
       showSlideNumber: 'all',
@@ -54,7 +54,7 @@
 
       // Add the current slide number to the URL hash so that reloading the
       // page/copying the URL will return you to the same slide
-      hash: false,
+      hash: true,
 
       // Flags if we should monitor the hash and change slides accordingly
       respondToHashChanges: true,
@@ -74,11 +74,13 @@
       // Vertical centering of slides
       center: true,
 
-      backgroundTransition: 'fade',
+      transition: 'fade',
 
       // Enables touch navigation on devices with touch input
       touch: true,
+
       plugins: [ RevealMarkdown, RevealHighlight, RevealMermaid, RevealNotes, RevealSearch, RevealMath, RevealZoom ],
+      
       mermaid: {
         startOnLoad: true
       },
