@@ -27,9 +27,6 @@
     </div>
   </div>
 
-  <!-- Reveal.js core library -->
-  <script src="./revealjs/dist/reveal.js"></script>
-
   <!-- Plugins for additional features -->
   <script src="./revealjs/plugin/highlight/highlight.js"></script>
   <script src="./revealjs/plugin/markdown/markdown.js"></script>
@@ -58,16 +55,8 @@
         keyboard: true, // Enable keyboard navigation
         overview: true, // Enable slide overview mode
         center: true, // Center slides vertically
-        transition: 'convex', // Use "convex" transition for slide changes
-        touch: true, // Enable touch navigation
 
-        // Plugins for extended functionality
-        plugins: [RevealMarkdown, RevealHighlight, RevealMermaid, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-
-        // PDF export settings
-        pdfMaxPagesPerSlide: 1,
-
-        // Mermaid plugin configuration
+        // Mermaid configuration
         mermaid: {
           startOnLoad: true,
           theme: 'dark'
@@ -82,6 +71,12 @@
     } catch (error) {
       console.error('Reveal.js initialization failed:', error);
     }
+  </script>
+
+  <!-- Add highlight.js JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
   </script>
 </body>
 </html>
