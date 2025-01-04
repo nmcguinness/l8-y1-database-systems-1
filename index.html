@@ -40,14 +40,6 @@
   <script src="./revealjs/plugin/mermaid/mermaid.js"></script>
   <script src="./revealjs/plugin/highlight/highlightjs-line-numbers.js"></script>
 
-  <!-- Service worker for offline support -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
-        .catch(err => console.error('Service worker registration failed:', err));
-    }
-  </script>
-
   <!-- Initialize Reveal.js with configuration options -->
   <script>
     try {
