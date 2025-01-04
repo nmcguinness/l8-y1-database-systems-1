@@ -2,22 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Samples</title>
+    <title>Exercises</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 1rem;
+        overflow: auto;
+      }
+    </style>
+    <!-- Include Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   </head>
   <body>
-    <h1>Markdown Renderer</h1>
+    <h1>Markdown Exercises with Mermaid Diagrams</h1>
     <div id="content"></div>
 
     <!-- Include Marked.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script>
+      // Initialize Mermaid
+      mermaid.initialize({ startOnLoad: false });
+
       // Fetch and render the Markdown file
-      fetch('exercises.md') // Replace with your actual Markdown file path
+      fetch('exercises.md')
         .then(response => response.text())
         .then(markdown => {
           // Convert Markdown to HTML
-          document.getElementById('content').innerHTML = marked.parse(markdown); // Use marked.parse()
+          const htmlContent = marked.parse(markdown);
+          document.getElementById('content').innerHTML = htmlContent;
+
+          // Render Mermaid diagrams
+          mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
         })
         .catch(error => console.error('Error loading Markdown:', error));
     </script>
