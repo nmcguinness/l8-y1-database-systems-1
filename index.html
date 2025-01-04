@@ -96,18 +96,22 @@
       // Select the Reveal.js slides container
       const revealContainer = document.querySelector('.reveal .slides');
 
-      // Create a new section for the slides
-      const section = document.createElement('section');
-      section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`); // Path to the Markdown file
-      section.setAttribute('data-separator', '^---$'); // Define slide separator (---)
-      section.setAttribute('data-separator-vertical', '^--$'); // Optional: Define vertical separator (--)
+      // Ensure Reveal.js is initialized before appending slides
+      if (revealContainer) {
+        const section = document.createElement('section');
+        section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`); // Path to the Markdown file
+        section.setAttribute('data-separator', '^---$'); // Define slide separator (---)
+        section.setAttribute('data-separator-vertical', '^--$'); // Optional: Define vertical separator (--)
 
-      revealContainer.appendChild(section); // Add the section to the slides container
+        revealContainer.appendChild(section); // Add the section to the slides container
 
-      // Reinitialize Reveal.js to process the newly added Markdown slide
-      setTimeout(() => {
-        Reveal.sync();
-      }, 100); // Slight delay to ensure proper initialization
+        // Reinitialize Reveal.js to process the newly added Markdown slide
+        setTimeout(() => {
+          Reveal.sync();
+        }, 100); // Slight delay to ensure proper initialization
+      } else {
+        console.error('Reveal.js container not found.');
+      }
     }
   </script>
 </body>
