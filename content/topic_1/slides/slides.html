@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Reveal.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../lib/revealjs/dist/theme/black.css"
+    />
+    <link 
+    rel="stylesheet" 
+    href="../../../lib/revealjs/plugin/highlight/styles/github-dark.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="./slides.md"
+          data-separator="^---$"
+          data-separator-vertical="^--$"
+        ></section>
+      </div>
+    </div>
+
+    <!-- Reveal.js and Markdown plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
+        hash: true, // Enable URL hash for navigation
+        markdown: {
+          smartypants: true // Enable smart quotes and dashes
+        },
+        center: true, // Center slides vertically
+        slideNumber: true // Show slide numbers
+      });
+    </script>
+  </body>
+</html>

@@ -1,123 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Database Systems 1 - Homepage</title>
-
-  <!-- Link to Reveal.js styles -->
-  <link rel="stylesheet" href="./lib/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="./lib/revealjs/dist/theme/black.css">
-  <link rel="stylesheet" href="./lib/revealjs/plugin/highlight/styles/github-dark.css">
-  <link rel="stylesheet" href="./styles.css">
-
-  <!-- Optional: Add Google Fonts for better typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- Homepage Table -->
-  <div class="table-container">
-    <h1>Database Systems 1</h1>
-    <p>Welcome to the Database Systems 1 module. Below is the list of topics with links to slides, exercises, and references.</p>
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Topic Number</th>
-          <th>Slides</th>
-          <th>Description</th>
-          <th>Keywords</th>
-          <th>Exercise Links</th>
-          <th>References</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td><a href="./index.html?topic=1">Slides</a></td>
-          <td>Introduction to Databases</td>
-          <td>database, intro</td>
-          <td><a href="./content/topic_1/exercises/exercises.md">Exercises</a></td>
-          <td><a href="https://example.com/ref1">Reference 1</a></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><a href="./index.html?topic=2">Slides</a></td>
-          <td>Relational Models</td>
-          <td>relational, model</td>
-          <td><a href="./content/topic_2/exercises/exercises.md">Exercises</a></td>
-          <td><a href="https://example.com/ref2">Reference 2</a></td>
-        </tr>
-        <!-- Add more topics as needed -->
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Reveal.js container -->
-  <div class="reveal">
-    <div class="slides"></div>
-  </div>
-
-  <!-- Reveal.js core library -->
-  <script src="./lib/revealjs/dist/reveal.js"></script>
-
-  <!-- Reveal.js plugins -->
-  <script src="./lib/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="./lib/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="./lib/revealjs/plugin/notes/notes.js"></script>
-  <script src="./lib/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="./lib/revealjs/plugin/search/search.js"></script>
-  <script src="./lib/revealjs/plugin/math/math.js"></script>
-
-  <script>
-    // Function to get query parameters from the URL
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-    // Initialize Reveal.js with basic configuration
-    Reveal.initialize({
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-      hash: true, // Enable URL hash for navigation
-      markdown: {
-        smartypants: true // Enable smart quotes and dashes
-      },
-      center: true, // Center slides vertically
-      slideNumber: true // Show slide numbers
-    });
-
-    // Dynamically load slides if a 'topic' parameter is provided in the URL
-    const topic = getQueryParam('topic');
-    if (topic) {
-      console.log(`Loading slides for topic: ${topic}`); // Debugging output
-
-      // Hide the table (homepage) if we're viewing slides
-      document.querySelector('.table-container').style.display = 'none';
-
-      // Select the Reveal.js slides container
-      const revealContainer = document.querySelector('.reveal .slides');
-
-      if (revealContainer) {
-        // Create a new section for the slides
-        const section = document.createElement('section');
-        section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`); // Path to the Markdown file
-        section.setAttribute('data-separator', '^---$'); // Define slide separator (---)
-        section.setAttribute('data-separator-vertical', '^--$'); // Optional: Define vertical separator (--)
-
-        revealContainer.appendChild(section); // Add the section to the slides container
-
-        // Reinitialize Reveal.js to process the newly added Markdown slide
-        setTimeout(() => {
-          Reveal.sync();
-          console.log('Reveal.js synced and Markdown loaded.'); // Debugging output
-        }, 100); // Slight delay to ensure proper initialization
-      } else {
-        console.error('Reveal.js container not found.');
-      }
-    } else {
-      console.log('No topic parameter found. Showing homepage.');
-    }
-  </script>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Presentation Hub</h1>
+    <ul>
+      <li><a href="./content/topic_1/slides/slides.html">Presentation 1</a></li>
+  
+      <!-- Add more as needed -->
+    </ul>
+  </body>
 </html>
