@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Homepage Table -->
   <div class="table-container">
     <h1>Database Systems 1</h1>
     <p>Welcome to the Database Systems 1 module. Below is the list of topics with links to slides, exercises, and references.</p>
@@ -52,7 +53,7 @@
     </table>
   </div>
 
-  <!-- Reveal.js container (empty by default) -->
+  <!-- Reveal.js container -->
   <div class="reveal">
     <div class="slides"></div>
   </div>
@@ -78,19 +79,29 @@
     // Initialize Reveal.js
     Reveal.initialize({
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-      hash: true,
+      hash: true, // Ensure the correct slide is shown when navigating
+      markdown: {
+        smartypants: true // Enable smart quotes, dashes, etc.
+      },
+      center: true, // Center slides vertically
+      slideNumber: true // Show slide numbers
     });
 
-    // Dynamically load slides if a topic is provided in the URL
+    // Dynamically load slides if a 'topic' parameter is provided in the URL
     const topic = getQueryParam('topic');
     if (topic) {
-      document.querySelector('.table-container').style.display = 'none'; // Hide table for slides view
-      const revealContainer = document.querySelector('.reveal .slides');
-      const section = document.createElement('section');
-      section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`);
-      revealContainer.appendChild(section);
+      // Hide the table (homepage) if we're viewing slides
+      document.querySelector('.table-container').style.display = 'none';
 
-      // Reinitialize Reveal.js to load the new slides
+      // Select the Reveal.js slides container
+      const revealContainer = document.querySelector('.reveal .slides');
+
+      // Create a new section for the slides
+      const section = document.createElement('section');
+      section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`); // Path to the Markdown file
+      revealContainer.appendChild(section); // Add the section to the slides container
+
+      // Reinitialize Reveal.js to process the newly added Markdown slide
       Reveal.sync();
     }
   </script>
