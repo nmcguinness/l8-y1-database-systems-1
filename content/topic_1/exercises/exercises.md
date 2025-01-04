@@ -1,6 +1,6 @@
 # Slide 1
 
-```mermaid
+
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     CUSTOMER {
@@ -18,7 +18,7 @@ erDiagram
         int quantity
         float pricePerUnit
     }
-```
+
 
 ---
 
@@ -47,11 +47,11 @@ Other are the speaker notes for this slide. They will only be visible in the pre
 
 ### Slide 4
 
-```mermaid
+
 sequenceDiagram
     Alice->>Bob: Hello Bob, how are you?
     Bob-->>Alice: I'm fine, thank you!
-```
+
 
 ---
 
