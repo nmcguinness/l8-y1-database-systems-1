@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Exercises</title>
+    <title>Exercises with Mermaid</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -33,12 +33,12 @@
       fetch('exercises.md')
         .then(response => response.text())
         .then(markdown => {
-          // Convert Markdown to HTML
+          // Convert Markdown to HTML using Marked.js
           const htmlContent = marked.parse(markdown);
           document.getElementById('content').innerHTML = htmlContent;
 
-          // Render Mermaid diagrams
-          mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+          // Render Mermaid diagrams after the Markdown content is added to the DOM
+          mermaid.init(undefined, document.querySelectorAll('code.language-mermaid'));
         })
         .catch(error => console.error('Error loading Markdown:', error));
     </script>
