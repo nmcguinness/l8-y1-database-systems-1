@@ -1,65 +1,38 @@
-/* Basic reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    background-color: #f5f5f5;
-  }
-  
-  h1 {
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-  
-  
-  .table-container {
-    width: 80%;
-    max-width: 1200px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #333;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  a {
-    color: #1a73e8;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+/* Pretty Table Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1rem 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Table Headers */
+thead th {
+  background-color: #f3f3f3;
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Table Body Rows */
+tbody tr {
+  border-bottom: 1px solid #ececec;
+}
+
+/* Zebra Striping for Table Rows */
+tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Table Data Cells */
+td {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+/* Hover Effect on Rows */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
