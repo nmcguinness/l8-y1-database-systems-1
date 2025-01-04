@@ -2,16 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Exercises</title>
-    <style>
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
-    </style>
+    <title>Markdown Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
   <body>
-    <iframe src="./exercises.md"></iframe>
+    <div id="content"></div>
+
+    <script>
+      fetch('./exercises.md') // Replace with the actual Markdown file
+        .then(response => response.text())
+        .then(markdown => {
+          document.getElementById('content').innerHTML = marked(markdown);
+        });
+    </script>
   </body>
+</html>
+
+
 </html>
