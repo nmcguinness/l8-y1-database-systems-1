@@ -52,6 +52,11 @@
     </table>
   </div>
 
+  <!-- Reveal.js container (empty by default) -->
+  <div class="reveal">
+    <div class="slides"></div>
+  </div>
+
   <!-- Reveal.js core library -->
   <script src="./lib/revealjs/dist/reveal.js"></script>
 
@@ -70,19 +75,23 @@
       return urlParams.get(param);
     }
 
-    // Check for the 'topic' parameter and dynamically load the corresponding slides
+    // Initialize Reveal.js
+    Reveal.initialize({
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
+      hash: true,
+    });
+
+    // Dynamically load slides if a topic is provided in the URL
     const topic = getQueryParam('topic');
     if (topic) {
+      document.querySelector('.table-container').style.display = 'none'; // Hide table for slides view
       const revealContainer = document.querySelector('.reveal .slides');
       const section = document.createElement('section');
       section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`);
       revealContainer.appendChild(section);
 
-      // Reinitialize Reveal.js to render the slides
-      Reveal.initialize({
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-        hash: true,
-      });
+      // Reinitialize Reveal.js to load the new slides
+      Reveal.sync();
     }
   </script>
 </body>
