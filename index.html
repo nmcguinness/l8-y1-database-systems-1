@@ -3,14 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module Content</title>
+  <title>Database Systems 1 - Homepage</title>
 
-  <!-- Meta description for better SEO -->
-  <meta name="description" content="Database Systems 1 presentation slides">
-  <meta name="author" content="Niall McGuinness">
-
-  <!-- Preload critical styles for performance improvement -->
-  <link rel="preload" href="./lib/revealjs/dist/reveal.css" as="style">
+  <!-- Link to Reveal.js styles -->
   <link rel="stylesheet" href="./lib/revealjs/dist/reveal.css">
   <link rel="stylesheet" href="./lib/revealjs/dist/theme/black.css">
   <link rel="stylesheet" href="./lib/revealjs/plugin/highlight/styles/github-dark.css">
@@ -18,124 +13,76 @@
 
   <!-- Optional: Add Google Fonts for better typography -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
-  <p>Welcome to the Database Systems 1 module. Below is the list of topics with links to slides, exercises, and references.</p>
- 
-  <!--------------------------------------------------------------------------->
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Topic Number</th>
-        <th>Slides</th>
-        <th>Description</th>
-        <th>Keywords</th>
-        <th>Exercise Links</th>
-        <th>References</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td><a href="./content/topic_1/slides/slides.md">Slides</a></td>
-        <td>Introduction to Databases</td>
-        <td>database, intro</td>
-        <td><a href="./content/topic_1/exercises/exercises.md">Exercises</a></td>
-        <td><a href="https://example.com/ref1">Reference 1</a></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td><a href="./content/topic_2/slides/slides.md">Slides</a></td>
-        <td>Relational Models</td>
-        <td>relational, model</td>
-        <td><a href="./content/topic_2/exercises/exercises.md">Exercises</a></td>
-        <td><a href="https://example.com/ref2">Reference 2</a></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td><a href="./content/topic_3/slides/slides.md">Slides</a></td>
-        <td>SQL Basics</td>
-        <td>SQL, basics</td>
-        <td><a href="./content/topic_3/exercises/exercises.md">Exercises</a></td>
-        <td><a href="https://example.com/ref3">Reference 3</a></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td><a href="./content/topic_4/slides/slides.md">Slides</a></td>
-        <td>Advanced SQL Queries</td>
-        <td>SQL, advanced</td>
-        <td><a href="./content/topic_4/exercises/exercises.md">Exercises</a></td>
-        <td><a href="https://example.com/ref4">Reference 4</a></td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td><a href="./content/topic_5/slides/slides.md">Slides</a></td>
-        <td>Database Design Principles</td>
-        <td>design, principles</td>
-        <td><a href="./content/topic_5/exercises/exercises.md">Exercises</a></td>
-        <td><a href="https://example.com/ref5">Reference 5</a></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!--------------------------------------------------------------------------->
-
-
+  <div class="table-container">
+    <h1>Database Systems 1</h1>
+    <p>Welcome to the Database Systems 1 module. Below is the list of topics with links to slides, exercises, and references.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Topic Number</th>
+          <th>Slides</th>
+          <th>Description</th>
+          <th>Keywords</th>
+          <th>Exercise Links</th>
+          <th>References</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="./index.html?topic=1">Slides</a></td>
+          <td>Introduction to Databases</td>
+          <td>database, intro</td>
+          <td><a href="./content/topic_1/exercises/exercises.md">Exercises</a></td>
+          <td><a href="https://example.com/ref1">Reference 1</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="./index.html?topic=2">Slides</a></td>
+          <td>Relational Models</td>
+          <td>relational, model</td>
+          <td><a href="./content/topic_2/exercises/exercises.md">Exercises</a></td>
+          <td><a href="https://example.com/ref2">Reference 2</a></td>
+        </tr>
+        <!-- Add more topics as needed -->
+      </tbody>
+    </table>
+  </div>
 
   <!-- Reveal.js core library -->
   <script src="./lib/revealjs/dist/reveal.js"></script>
 
-  <!-- Plugins for additional features -->
-  <script src="./lib/revealjs/plugin/highlight/highlight.js"></script>
+  <!-- Reveal.js plugins -->
   <script src="./lib/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="./lib/revealjs/plugin/highlight/highlight.js"></script>
   <script src="./lib/revealjs/plugin/notes/notes.js"></script>
   <script src="./lib/revealjs/plugin/zoom/zoom.js"></script>
   <script src="./lib/revealjs/plugin/search/search.js"></script>
   <script src="./lib/revealjs/plugin/math/math.js"></script>
-  <script src="./lib/revealjs/plugin/mermaid/mermaid.js"></script>
-  <script src="./lib/revealjs/plugin/highlight/highlightjs-line-numbers.js"></script>
 
-  <!-- Initialize Reveal.js with configuration options -->
   <script>
-    try {
-      Reveal.initialize({
-        // Plugins for extended functionality
-        plugins: [RevealMarkdown, RevealHighlight, RevealMermaid, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-                // Mermaid plugin configuration
-        mermaid: {
-          startOnLoad: true,
-          theme: 'dark'
-        },
-        // Highlight.js configuration
-        highlight: {
-          lineNumbers: true // Show line numbers in code blocks
-        },
-        controls: true, // Display navigation arrows
-        controlsTutorial: true, // Show control hints
-        controlsLayout: 'bottom-right', // Layout for controls
-        controlsBackArrows: 'faded', // Style for back arrows
-        progress: true, // Display progress bar
-        slideNumber: true, // Show slide numbers
-        showSlideNumber: 'all', // Show slide number on all contexts
-        hash: true, // Enable hash-based navigation
-        respondToHashChanges: true, // Sync slides with hash changes
-        jumpToSlide: true, // Enable quick slide navigation
-        history: false, // Disable history tracking
-        keyboard: true, // Enable keyboard navigation
-        overview: true, // Enable slide overview mode
-        center: true, // Center slides vertically
-        transition: 'convex', // Use "convex" transition for slide changes
-        touch: true, // Enable touch navigation
+    // Function to get query parameters from the URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
-        // PDF export settings
-        pdfMaxPagesPerSlide: 1,
+    // Check for the 'topic' parameter and dynamically load the corresponding slides
+    const topic = getQueryParam('topic');
+    if (topic) {
+      const revealContainer = document.querySelector('.reveal .slides');
+      const section = document.createElement('section');
+      section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`);
+      revealContainer.appendChild(section);
+
+      // Reinitialize Reveal.js to render the slides
+      Reveal.initialize({
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
+        hash: true,
       });
-      hljs.highlightAll(); // Apply syntax highlighting
-    } catch (error) {
-      console.error('Reveal.js initialization failed:', error);
     }
   </script>
 </body>
