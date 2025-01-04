@@ -76,12 +76,12 @@
       return urlParams.get(param);
     }
 
-    // Initialize Reveal.js
+    // Initialize Reveal.js with basic configuration
     Reveal.initialize({
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom],
-      hash: true, // Ensure the correct slide is shown when navigating
+      hash: true, // Enable URL hash for navigation
       markdown: {
-        smartypants: true // Enable smart quotes, dashes, etc.
+        smartypants: true // Enable smart quotes and dashes
       },
       center: true, // Center slides vertically
       slideNumber: true // Show slide numbers
@@ -99,10 +99,15 @@
       // Create a new section for the slides
       const section = document.createElement('section');
       section.setAttribute('data-markdown', `./content/topic_${topic}/slides/slides.md`); // Path to the Markdown file
+      section.setAttribute('data-separator', '^---$'); // Define slide separator (---)
+      section.setAttribute('data-separator-vertical', '^--$'); // Optional: Define vertical separator (--)
+
       revealContainer.appendChild(section); // Add the section to the slides container
 
       // Reinitialize Reveal.js to process the newly added Markdown slide
-      Reveal.sync();
+      setTimeout(() => {
+        Reveal.sync();
+      }, 100); // Slight delay to ensure proper initialization
     }
   </script>
 </body>
