@@ -14,6 +14,10 @@
         padding: 1rem;
         overflow: auto;
       }
+      .mermaid {
+        text-align: center;
+        margin: 20px 0;
+      }
     </style>
     <!-- Include Mermaid.js -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -35,10 +39,18 @@
         .then(markdown => {
           // Convert Markdown to HTML using Marked.js
           const htmlContent = marked.parse(markdown);
-          document.getElementById('content').innerHTML = htmlContent;
 
-          // Render Mermaid diagrams after the Markdown content is added to the DOM
-          mermaid.init(undefined, document.querySelectorAll('code.language-mermaid'));
+          // Replace Mermaid code blocks with <div class="mermaid"> for rendering
+          const renderedContent = htmlContent.replace(
+            /<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
+            (_, mermaidCode) => `<div class="mermaid">${mermaidCode}</div>`
+          );
+
+          // Insert the rendered content into the page
+          document.getElementById('content').innerHTML = renderedContent;
+
+          // Render Mermaid diagrams
+          mermaid.init(undefined, document.querySelectorAll('.mermaid'));
         })
         .catch(error => console.error('Error loading Markdown:', error));
     </script>
