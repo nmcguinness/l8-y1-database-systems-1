@@ -25,16 +25,26 @@
   <!-- Reveal.js plugins -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/mermaid/mermaid.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
   <script>
     // Initialize Reveal.js
     Reveal.initialize({
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMermaid ]
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      dependencies: [
+        { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js' },
+        { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js' }
+      ]
     });
 
-    // Initialize Mermaid
+    // Mermaid integration
     mermaid.initialize({ startOnLoad: true });
+
+    Reveal.on('ready', function () {
+      document.querySelectorAll('pre code.mermaid').forEach((el) => {
+        mermaid.init(undefined, el);
+      });
+    });
   </script>
 </body>
 </html>
