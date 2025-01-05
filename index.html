@@ -30,10 +30,11 @@
   <script>
     // Initialize Reveal.js
     Reveal.initialize({
-      plugins: [ RevealMarkdown, RevealHighlight ],
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMermaid],
       dependencies: [
         { src: './lib/revealjs/plugin/markdown/markdown.js' },
-        { src: './lib/revealjs/plugin/highlight/highlight.js' }
+        { src: './lib/revealjs/plugin/highlight/highlight.js' },
+        { src: './lib/revealjs/plugin/mermaid/mermaid.js' }
       ]
     });
 
