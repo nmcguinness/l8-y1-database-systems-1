@@ -1,51 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Reveal.js Presentation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>My Reveal.js Presentation</title>
   <!-- Reveal.js core CSS -->
-  <link rel="stylesheet" href="./lib/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="./lib/revealjs/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <!-- Reveal.js theme (pick one from the dist/theme folder) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css" id="theme">
 
-  <!-- Highlight.js for code syntax highlighting -->
-  <link rel="stylesheet" href="./lib/revealjs/plugin/highlight/monokai.css">
+  <!-- Optional: Mermaid styling (light, dark, or default) -->
+  <style>
+    /* Mermaid diagrams in a dark theme can be styled if needed */
+  </style>
 </head>
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown="slides.md" data-separator="^---$" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
-    </div>
+
+<div class="reveal">
+  <div class="slides">
+    <!-- This section uses the built-in Markdown plugin to fetch and parse slides.md -->
+    <section 
+      data-markdown="slides.md"
+      data-separator="^\r?\n---\r?\n$"
+      data-separator-vertical="^\r?\n--\r?\n$"
+      data-separator-notes="^Notes:"
+      data-charset="utf-8">
+    </section>
   </div>
+</div>
 
-  <!-- Reveal.js core library -->
-  <script src="./lib/revealjs/dist/reveal.js"></script>
+<!-- Reveal.js core JS -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<!-- Plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/zoom/zoom.js"></script>
+<!-- Mermaid -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
-  <!-- Reveal.js plugins -->
-  <script src="./lib/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="./lib/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="./lib/revealjs/plugin/mermaid/mermaid.js"></script>
+<script>
+  // Initialize Reveal
+  Reveal.initialize({
+    hash: true, // allows the URL to update, enabling direct links to specific slides
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+  });
 
-  <script>
-    // Initialize Reveal.js
-    Reveal.initialize({
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMermaid],
-      dependencies: [
-        { src: './lib/revealjs/plugin/markdown/markdown.js' },
-        { src: './lib/revealjs/plugin/highlight/highlight.js' },
-        { src: './lib/revealjs/plugin/mermaid/mermaid.js' }
-      ]
-    });
+  // Initialize Mermaid
+  mermaid.initialize({ startOnLoad: true });
+</script>
 
-    // Mermaid integration
-    mermaid.initialize({ startOnLoad: true });
-
-    Reveal.on('ready', function () {
-      document.querySelectorAll('pre code.mermaid').forEach((el) => {
-        mermaid.init(undefined, el);
-      });
-    });
-  </script>
 </body>
 </html>
