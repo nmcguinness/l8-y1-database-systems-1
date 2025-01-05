@@ -1,41 +1,36 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Database Systems 1 - Home</title>
-    <link rel="stylesheet" href="./lib/css/styles.css" />
-  </head>
-  <body>
-    <h1>Presentations & Resources</h1>
-    <p>This table links to individual topics, their slides, and related resources.</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Reveal.js Presentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Topic</th>
-          <th>Slides</th>
-          <th>Description</th>
-          <th>Keywords</th>
-          <th>Samples</th>
-          <th>Exercises</th>
-          <th>References</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Example row #1 -->
-        <tr>
-          <td>1</td>
-          <!-- Link to either a separate HTML or a dynamic viewer.html?md=... -->
-          <td><a href="./content/topic_1/slides/slides.html">View Slides</a></td>
-          <td>Introduction to some concept</td>
-          <td>Basics, Overview</td>
-          <td><a href="./content/topic_1/samples/samples.html">Samples</a></td>
-          <td><a href="./content/topic_1/exercises/exercises.html">Exercises</a></td>
-          <td><a href="references/topic1-references.html">References</a></td>
-        </tr>
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme">
 
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
-  </body>
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="./content/topic_1/exercises/exercises.md" data-separator="^---$" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+    </div>
+  </div>
+
+  <!-- Reveal.js core library -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+  <!-- Reveal.js plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+
+  <script>
+    // Initialize Reveal.js
+    Reveal.initialize({
+      plugins: [ RevealMarkdown, RevealHighlight ]
+    });
+  </script>
+</body>
 </html>

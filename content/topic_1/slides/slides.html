@@ -42,7 +42,18 @@
       Reveal.initialize({
         plugins: [Markdown, Highlight, Notes, Zoom, Search, Math, Mermaid],
         startOnLoad: true,
-
+        theme: "dark",
+        securityLevel: "strict",
+        logLevel: "fatal",
+        flowchart: {
+          curve: "basis"
+        },
+        hash: true,
+        markdown: {
+          smartypants: true
+        },
+        center: true,
+        slideNumber: true
       });
     </script>
   </body>
